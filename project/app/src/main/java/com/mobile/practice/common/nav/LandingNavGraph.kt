@@ -7,6 +7,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.NavHostController
 import com.mobile.practice.common.route.LandingScreenRoute
 import com.mobile.practice.screen.LandingScreen
+import com.mobile.practice.screen.SignInScreen
+import com.mobile.practice.screen.SignInViewModel
 
 @Composable
 fun LandingNavGraph(
@@ -26,7 +28,10 @@ fun LandingNavGraph(
         }
 
         composable(route = LandingScreenRoute.SignIn.route) {
-
+            SignInScreen(
+                modifier = Modifier,
+                viewModel = SignInViewModel()
+            )
         }
     }
 
