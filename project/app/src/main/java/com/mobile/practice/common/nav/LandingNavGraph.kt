@@ -1,10 +1,12 @@
 package com.mobile.practice.common.nav
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.NavHostController
 import com.mobile.practice.common.route.LandingScreenRoute
+import com.mobile.practice.screen.LandingScreen
 
 @Composable
 fun LandingNavGraph(
@@ -16,7 +18,11 @@ fun LandingNavGraph(
         startDestination = LandingScreenRoute.Landing.route
     ) {
         composable(route = LandingScreenRoute.Landing.route) {
-
+            LandingScreen(modifier = Modifier) {
+                navController.navigate(LandingScreenRoute.SignIn.route) {
+                    popUpTo(0)
+                }
+            }
         }
 
         composable(route = LandingScreenRoute.SignIn.route) {
